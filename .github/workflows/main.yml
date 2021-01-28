@@ -20,11 +20,11 @@ jobs:
     - name: Package the application
       run: mvn -B package --file pom.xml
       
-    - name: Build the new release :latest
-      run: docker build -t stoffelcharlotte/orsys:latest .
+    - name: Build the new release :v1
+      run: docker build -t stoffelcharlotte/orsys:v1 .
 
-    - name: Push to docker hub :latest
+    - name: Push to docker hub :v1
       uses: actions-hub/docker@master
       with:
-       args: push stoffelcharlotte/orsys:latest
+       args: push stoffelcharlotte/orsys:v1
  
